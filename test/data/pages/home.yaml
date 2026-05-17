@@ -47,6 +47,49 @@ sections:
     design:
       columns: "3"
 
+  - block: map
+    content:
+      title: "Visit the Lab"
+      subtitle: "We're based on the Stanford campus — drop in any time during office hours."
+      location:
+        address: |
+          353 Jane Stanford Way
+          Stanford, CA 94305
+          United States
+        lat: 37.4275
+        lng: -122.1697
+      zoom: 15
+      cta:
+        directions:
+          text: "Get directions"
+        phone: "+1-650-555-0142"
+        email: "hello@example.com"
+    design:
+      layout: side-by-side
+      height: md
+      style: streets
+
+  - block: map
+    content:
+      title: "Where to find us"
+      markers:
+        - lat: 37.4275
+          lng: -122.1697
+          title: "Stanford AI Lab"
+          description: "Main campus building"
+        - lat: 37.4419
+          lng: -122.1430
+          title: "Palo Alto Office"
+          description: "Downtown Palo Alto"
+        - lat: 37.7749
+          lng: -122.4194
+          title: "San Francisco HQ"
+          description: "Mission District"
+    design:
+      layout: map-only
+      height: lg
+      style: light
+
   - block: cta-card
     content:
       title: "Ready to get started?"

@@ -26,7 +26,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // Don't bundle these libraries, just copy them
-      external: ["mermaid", "plotly.js", "katex", "markmap-autoloader", "alpinejs"],
+      external: ["mermaid", "plotly.js", "katex", "markmap-autoloader", "alpinejs", "maplibre-gl"],
     },
   },
 
@@ -73,6 +73,16 @@ export default defineConfig({
         {
           src: "node_modules/alpinejs/dist/cdn.min.js",
           dest: "alpinejs/",
+        },
+
+        // MapLibre GL - Open-source interactive vector maps (map block)
+        {
+          src: "node_modules/maplibre-gl/dist/maplibre-gl.js",
+          dest: "maplibre/",
+        },
+        {
+          src: "node_modules/maplibre-gl/dist/maplibre-gl.css",
+          dest: "maplibre/",
         },
 
         // Preact for interactive components

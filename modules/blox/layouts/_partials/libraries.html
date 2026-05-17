@@ -1,3 +1,11 @@
+{{/* MapLibre GL — load before Preact block scripts so window.maplibregl is available when the map block hydrates */}}
+{{ if .Page.Store.Get "has_map" }}
+  {{ $maplibre_css := resources.Get "dist/lib/maplibre/maplibre-gl.css" | resources.Fingerprint "sha256" }}
+  <link rel="stylesheet" href="{{ $maplibre_css.RelPermalink }}" integrity="{{ $maplibre_css.Data.Integrity }}" />
+  {{ $maplibre_js := resources.Get "dist/lib/maplibre/maplibre-gl.js" | resources.Fingerprint "sha256" }}
+  <script defer src="{{ $maplibre_js.RelPermalink }}" integrity="{{ $maplibre_js.Data.Integrity }}"></script>
+{{ end }}
+
 {{/* Load Preact for component-based blocks */}}
 {{/* Check if any blocks on this page use Preact (set by init.html) */}}
 {{ if .Page.Store.Get "needs_preact" }}

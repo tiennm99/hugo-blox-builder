@@ -107,6 +107,11 @@
         {{ end }}
       {{ end }}
       
+      {{/* Detect map blocks so libraries.html can load MapLibre GL */}}
+      {{ if eq $block_type "map" }}
+        {{ $page.Store.Set "has_map" true }}
+      {{ end }}
+
       {{/* Detect FAQ blocks for JSON-LD structured data (avoid race conditions) */}}
       {{ if eq $block_type "faq" }}
         {{ if $block.content.items }}

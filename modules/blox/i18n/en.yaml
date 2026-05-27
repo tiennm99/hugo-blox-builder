@@ -327,6 +327,9 @@
 - id: license
   translation: License
 
+- id: status
+  translation: Status
+
 - id: peer_reviewed
   translation: Peer-reviewed
 
